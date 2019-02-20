@@ -1,5 +1,6 @@
 package com.ui.myapplication
 
+import com.yzy.http.BaseJsonObjectResult
 import com.yzy.rxandroid.YBaseSubscriber
 import io.reactivex.Observable
 import retrofit2.http.Field
@@ -16,5 +17,5 @@ import java.util.*
 interface DoLogin {
     @FormUrlEncoded
     @POST("/login")
-    fun login(@Field("telephone") tel: String, @Field("password") pwd: String): Observable<Any>
+    fun login(@Field("telephone") tel: String, @Field("password") pwd: String): Observable<BaseJsonObjectResult<String>>
 }

@@ -1,6 +1,7 @@
 package com.yzy.rxandroid
 
 import android.accounts.NetworkErrorException
+import android.annotation.SuppressLint
 import com.yzy.http.BaseJsonObjectResult
 import com.yzy.log.Log
 import io.reactivex.Observer
@@ -50,6 +51,7 @@ import java.util.concurrent.TimeoutException
     }
 
 
+    @SuppressLint("NewApi")
     override fun onError(e: Throwable) {
 //        Log.w("onError: ");这里可以打印错误信息
         onRequestEnd()
