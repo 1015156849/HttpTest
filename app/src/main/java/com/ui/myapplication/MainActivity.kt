@@ -1,6 +1,7 @@
 package com.ui.myapplication
 
 import android.Manifest
+import android.app.Activity
 import android.os.Bundle
 import com.ui.myapplication.Base.LoginModel
 import com.ui.myapplication.Base.LoginPresenter
@@ -17,25 +18,28 @@ import com.yzy.toast.Toast
  * @createTime 2019/2/12
  * @description
  */
-class MainActivity : YBaseActivity<LoginPresenter, LoginModel>(LoginPresenter(), LoginModel()) {
+class MainActivity
+//    :Activity()
+    : YBaseActivity<LoginPresenter, LoginModel>(LoginPresenter(), LoginModel())
+{
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        YUtil.instance.getPermission(
-            this,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            object : PermissionCallBack {
-                override fun success() {
-                    super.success()
-                    Log.i("成功获取到权限了")
-                    Toast.show(getActivityContext(), "恭喜你拿到了权限", 1)
-                }
-            })
-
-        mPresenter.doLogin("1","2")
+        initSystemBarTint(R.color.colorPrimary)
+//        YUtil.instance.getPermission(
+//            this,
+//            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//            object : PermissionCallBack {
+//                override fun success() {
+//                    super.success()
+//                    Log.i("成功获取到权限了")
+//                    Toast.show(getActivityContext(), "恭喜你拿到了权限", 1)
+//                }
+//            })
+//
+//        mPresenter.doLogin("1","2")
 
 
     }

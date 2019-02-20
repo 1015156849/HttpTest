@@ -1,9 +1,11 @@
 package com.ui.myapplication.Base
 
 import android.annotation.SuppressLint
+import com.google.gson.Gson
 import com.ui.myapplication.DoLogin
 import com.yzy.YUtil
 import com.yzy.http.BaseJsonObjectResult
+import com.yzy.log.Log
 import com.yzy.mvp.presenter.YBasePresenter
 import com.yzy.rxandroid.YBaseSubscriber
 
@@ -29,22 +31,12 @@ class LoginPresenter :
 
         var doLogin = YUtil.instance.http?.create(DoLogin::class.java)
 
-        doLogin!!.login(tel, pwd).compose(YUtil.instance.requestSetThread()).subscribe(object : MyOb<String>() {
-            override fun onFailure(e: Throwable, isNetWorkError: Boolean) {
 
+        doLogin?.login(LoginReq("15937600082","123123",""))?.compose(YUtil.instance.requestSetThread())?.subscribe(object : MyOb<String>() {
+            override fun onFailure(t: BaseJsonObjectResult<String>) {
 
             }
-
-            override fun showLoading() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            override fun closeLoading() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
             override fun onSuccess(t: BaseJsonObjectResult<String>) {
-
 
             }
 

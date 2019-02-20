@@ -1,5 +1,7 @@
 package com.yzy.callback
 
+import com.yzy.log.Log
+
 /**
  * @packageName com.yzy.callback
  * @author 杨振宇 1015156849@qq.com
@@ -15,7 +17,7 @@ interface PermissionCallBack {
      * @params []
      * @return
      */
-    fun success() {}
+    fun success() {   Log.i("成功获取到权限了")}
     /**
      * @packageName com.yzy.callback
      * @author 杨振宇 1015156849@qq.com
@@ -24,5 +26,5 @@ interface PermissionCallBack {
      * @params []
      * @return
      */
-    fun fail() {}
+    fun fail() {   Log.i("获取权限失败")}
 }

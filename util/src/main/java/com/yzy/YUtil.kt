@@ -14,23 +14,22 @@ import retrofit2.Retrofit
 
 import com.google.gson.GsonBuilder
 
-import okhttp3.OkHttpClient
-
 
 import java.util.concurrent.TimeUnit
 import com.yzy.base.YBaseApplication
+import com.yzy.http.HttpsUtils
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import okhttp3.*
 
 
-import okhttp3.Cache
-import okhttp3.Interceptor
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 
 import java.io.File
-
+import javax.net.ssl.HostnameVerifier
+import javax.net.ssl.SSLSession
 
 
 /**
@@ -43,7 +42,7 @@ class YUtil {
     var mTAG: String? = "YUtil"
     var isDEBUG: Boolean = false
     var http: Retrofit? = null
-    var okHttpClient: OkHttpClient? = null
+
 
     private val READ_TIME_OUT: Long = 30000
     private val CONNECT_TIME_OUT: Long = 30000
@@ -87,36 +86,40 @@ class YUtil {
 
         Log.i("初始化网络工具")
 
-        //缓存
-        val cacheFile = File(YBaseApplication.instance.cacheDir, "cache")
-        //100Mb
-        val cache = Cache(cacheFile, 1024 * 1024 * 100)
+//        //缓存
+//        val cacheFile = File(YBaseApplication.instance.cacheDir, "cache")
+//        //100Mb
+//        val cache = Cache(cacheFile, 1024 * 1024 * 100)
         //增加头部信息
-        val headerInterceptor = Interceptor { chain ->
-            val build = chain.request().newBuilder()
-                .addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
-                .addHeader("DeviceType", "Android")
-                .addHeader("version", "" + AppUtils.getVersionName(YBaseApplication.instance))
-                .build()
-            chain.proceed(build)
-        }
+//        val headerInterceptor = Interceptor { chain ->
+//            val build = chain.request().newBuilder()
+//                .addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+//                .addHeader("DeviceType", "Android")
+//                .addHeader("version", "" + AppUtils.getVersionName(YBaseApplication.instance))
+//                .build()
+//            chain.proceed(build)
+//        }
 
-        okHttpClient = OkHttpClient.Builder()
-            .readTimeout(READ_TIME_OUT, TimeUnit.MILLISECONDS)
-            .connectTimeout(CONNECT_TIME_OUT, TimeUnit.MILLISECONDS)
-//            .addInterceptor(mRewriteCacheControlInterceptor)
-//            .addNetworkInterceptor(mRewriteCacheControlInterceptor)
-            .addInterceptor(headerInterceptor)
-//            .addInterceptor(logInterceptor)
-//            .sslSocketFactory(SSLSocketClient.getSSLSocketFactory())//配置忽略证书
-//            .hostnameVerifier(SSLSocketClient.getHostnameVerifier())//配置忽略证书
-            .cache(cache)
-            .build()
+//        val sslParams = HttpsUtils.getSslSocketFactory(null, null, null)
+//        val okHttpClient = OkHttpClient.Builder()
+////            .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+//            .addInterceptor(
+//                 object :Interceptor{
+//                     override fun intercept(chain: Interceptor.Chain): Response {
+//                             val request = chain.request().newBuilder()
+//                                 .addHeader("Accept", "Application/JSON").build()
+//                             return chain.proceed(request)
+//                     }
+//                 })
+//            .connectTimeout(CONNECT_TIME_OUT, TimeUnit.MILLISECONDS)
+//            .readTimeout(READ_TIME_OUT, TimeUnit.MILLISECONDS)
+//            .hostnameVerifier { hostname, session -> true }
+//            .build()
         val gson = GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").serializeNulls().create()
 
         http = Retrofit.Builder()
-            .client(okHttpClient)
-            .baseUrl("http://10.58.202.125:8081")
+//            .client(okHttpClient)
+            .baseUrl("http://10.58.202.125:8081/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()

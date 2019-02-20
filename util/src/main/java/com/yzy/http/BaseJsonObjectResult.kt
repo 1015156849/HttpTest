@@ -10,5 +10,5 @@ open class BaseJsonObjectResult<T>(
     var success: Boolean,
     var data: T,
     var error: String?,
-    var errorDesc: String?
+    var errorDescription: String?
 )

@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.DisplayMetrics
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
+import com.yzy.R
 import com.yzy.callback.PermissionCallBack
 import com.yzy.screen.Screen
 import com.yzy.bar.StatusBarUtil
@@ -31,7 +33,7 @@ import java.util.*
 abstract class YBaseActivity<PresenterClass, ViewModelClass>(
     var mPresenter: PresenterClass,
     var mViewModel: ViewModelClass
-) : AppCompatActivity() {
+) : FragmentActivity() {
 
     private lateinit var httpQueue: ArrayList<Call<Any>>
     private lateinit var permissionCallBack: PermissionCallBack
@@ -57,7 +59,7 @@ abstract class YBaseActivity<PresenterClass, ViewModelClass>(
                 YBaseApplication.instance.virtualKeyHeight = 0
             }
         }
-        initSystemBarTint(Color.BLUE)
+
 
     }
 
@@ -69,7 +71,7 @@ abstract class YBaseActivity<PresenterClass, ViewModelClass>(
      * @params [colorInt]
      * @return
      */
-    private val initSystemBarTint: (Int) -> Unit =
+     val initSystemBarTint: (Int) -> Unit =
         { colorInt -> StatusBarUtil.setStatusBarColor(getActivityContext(), colorInt) }
 
 
