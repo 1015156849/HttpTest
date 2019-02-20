@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#999999</color>
+    <color name="colorPrimaryDark">#7E7E7E</color>
+    <color name="colorAccent">#FF3B37</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="activity_bg">#FAFAFA</color>
+    <color name="activity_bg_hui">#f6f6f6</color>
+
+    <color name="px_xian">#e5e5e5</color>
+
+    <color name="txt_way_color">#363736</color>
+    <color name="home_but_text">#FF3B38</color>
+    <color name="home_but_text_an">#999999</color>
+    <color name="home_black_text">#333333</color>
+<!--vlayout-->
+    <color name="item_border_color">#666666</color>
+    <color name="item_default_color">#22EEEEEE</color>
+    <color name="item_pressed_color">#CCCCCC</color>
+    <color name="item_activated_color">#77CEEE</color>
+
+
+
+    <!-- Theme Colors -->
+    <color name="theme_white_primary">#FFFFFF</color>
+    <color name="theme_white_dark">#FFFFFF</color>
+    <color name="theme_white_accent">#000000</color>
+
+    <color name="theme_blue_primary">#2196F3</color>
+    <color name="theme_blue_dark">#1976D2</color>
+    <color name="theme_blue_accent">#FF4081</color>
+
+    <color name="theme_orange_primary">#FFF76E4C</color>
+    <color name="theme_orange_dark">#E64A19</color>
+    <color name="theme_light_blue_accent">#FF4081</color>
+
+    <color name="theme_cyan_primary">#00BCD4</color>
+    <color name="theme_cyan_dark">#0097A7</color>
+    <color name="theme_cyan_accent">#FF4081</color>
+
+    <color name="theme_green_primary">#4CAF50</color>
+    <color name="theme_green_dark">#388E3C</color>
+    <color name="theme_green_accent">#FF4081</color>
+
+    <color name="theme_teal_primary">#009688</color>
+    <color name="theme_teal_dark">#00796B</color>
+    <color name="theme_teal_accent">#FF4081</color>
+
+    <color name="theme_red_primary">#da4336</color>
+    <color name="theme_red_dark">#b93221</color>
+    <color name="theme_red_accent">#3D5AFE</color>
+
+    <color name="theme_pink_primary">#E91E63</color>
+    <color name="theme_pink_dark">#C2185B</color>
+    <color name="theme_pink_accent">#3D5AFE</color>
+
+    <color name="theme_purple_primary">#673AB7</color>
+    <color name="theme_purple_dark">#512DA8</color>
+    <color name="theme_purple_accent">#FF4081</color>
+
+    <color name="theme_grey_primary">#616161</color>
+    <color name="theme_grey_dark">#424242</color>
+    <color name="theme_grey_accent">#00E676</color>
+
+    <color name="theme_black_primary">#2A2A2F</color>
+    <color name="theme_black_dark">#151515</color>
+    <color name="theme_black_accent">#FF4081</color>
+
+    <color name="theme_brown_primary">#785447</color>
+    <color name="theme_brown_dark">#5C3F36</color>
+    <color name="theme_blown_accent">#785447</color>
+
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="goldenrod">#F7DA71</color>
+
+
+
+
+
+
+
+
+
+    <color name="txt_teacher_name">#555555</color>
+    <color name="user_info_bj">#f7f7f7</color>
+    <color name="user_info_right">#999999</color>
+    <color name="user_info_left">#333333</color>
+    <color name="user_info_line">#e5e5e5</color>
+    <color name="my">#666666</color>
+    <color name="meeting_title">#ff873e</color>
+    <color name="meeting_title_an">#e26317</color>
+    <color name="meeting_search">#ff4949</color>
+    <color name="getcode">#DE2928</color>
+    <color name="hy_qiandao">#ee5651</color>
+    <color name="transparent">#00000000</color>
+    <color name="darkgrey">#c0c0c0</color>
+    <color name="bg_color">#FDFDFD</color>
+    <color name="color_242424">#242424</color>
+    <color name="text_652C2C">#652C2C</color>
+    <color name="app_color">#DE2928</color>
+    <color name="color_FF3B37">#FF3B37</color>
+    <color name="color_4d4d4d">#4d4d4d</color>
+    <color name="bg_main">#F8F8F8</color>
+    <color name="color_CBCBCB">#CBCBCB</color>
+    <color name="color_FFB1AF">#FFB1AF</color>
+    <color name="color_F1F1F1">#F1F1F1</color>
+    <color name="themes_main">#d03b3b</color>
+    <color name="color_1d1d1d">#1d1d1d</color>
+    <color name="color_CBCBCD">#CBCBCD</color>
+    <color name="color_F5AAAC">#F5AAAC</color>
+    <color name="color_DCDCDC">#DCDCDC</color>
+    <color name="bg_F2A9A9">#F2A9A9</color>
+    <color name="color_f6f6f6">#f6f6f6</color>
+    <color name="color_252525">#252525</color>
+    <color name="color_1a1a1a">#1a1a1a</color>
+    <color name="text_4D4D4D">#4D4D4D</color>
+    <color name="color_515151">#515151</color>
+
+
+</resources>
